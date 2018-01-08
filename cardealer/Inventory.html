@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inventory</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="Dealer.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="Dealer.js"></script>
+  <script>
+  $(document).ready(function(){
+        $(".add-row").click(function(){
+            var Price = $("#Price").val();
+            var Make = $("#Make").val();
+            var Model = $("#Model").val();
+            var Photo = $("#Photo").attr('src');
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + Price + "</td><td>" + Make + "</td><td>" + Model + "</td><td>" + Photo + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });
+    </script>
+
+</head>
+<body id="invBody">
+  <h1 id="wild">Wild Child Cars</h1>
+
+  <div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="http://www.roadkill.com/wp-content/uploads/2015/12/Bad-Decision-Mercedes.jpg" alt="Merceds" style="max-height: 300px;">
+      </div>
+
+      <div class="item">
+        <img src="https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/media/51/beaters-rule-the-24-hours-of-lemons-inline-3-photo-437992-s-original.jpg?crop=1xw:1xh;center,center&resize=800:*" alt="Golf" style="max-height: 300px;">
+      </div>
+
+      <div class="item">
+        <img src="http://www.roadkill.com/wp-content/uploads/2015/12/Bert-One.jpg" alt="Volvo" style="max-height: 300px;">
+      </div>
+      <div class="item">
+        <img src="http://www.roadkill.com/wp-content/uploads/2015/12/Scrubby.jpg" alt="beetle" style="max-height: 300px;">
+      </div>
+
+      <div class="item">
+        <img src="http://www.roadkill.com/wp-content/uploads/2015/12/Chotus.jpg" alt="Lotus" style="max-height: 300px;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home.html"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a class="navlink" href="Home.html">Home</a></li>
+        <li><a class="navlink" href="Inventory.html">Inventory</a></li>
+        <li><a class="navlink" href="contact.html">Contact</a></li>
+        <li><a class="navlink" href="about.html">About Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-4 sidenav">
+      <p><a id="link" href="http://www.roadkill.com/greatest-24-hours-lemons-cars-time/">Lemons Cars</a></p>
+      <form id="calc" name="frm">
+      <table>
+      <tr>
+      <td>Vehicle Price</td>
+      <td><input type="text" name="price" /></td>
+      </tr>
+
+      <tr>
+      <td>Tax Rate</td>
+      <td>.08</td>
+      </tr>
+
+      <tr>
+      <td><input type="button" name="Submit" value="Submit" onClick="calculate(document.frm.price, tax)"
+
+      /></td>
+      </tr>
+      </table>
+      </form>
+
+    </div>
+
+    <div class="col-sm-8 text-left">
+
+    <form>
+        <input type="text" id="Price" placeholder="Price">
+        <input type="text" id="Make" placeholder="Make">
+        <input type="text" id="Model" placeholder="Model">
+        <input type="text" id="Photo" placeholder="Photo">
+    	<input type="button" class="add-row" value="Add Row">
+    </form>
+    <table id="search">
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>price</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="record"></td>
+                <td>15,000</td>
+                <td>Mercedes</td>
+                <td>300D</td>
+                <td><img src="http://www.roadkill.com/wp-content/uploads/2015/12/Bad-Decision-Mercedes.jpg" class="img-thumbnail" alt="Mercedes 300D.  Well maintained, low mileage casually driven luxury car." /></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="record"></td>
+                <td>8,000</td>
+                <td>Volkswagen</td>
+                <td>Golf</td>
+                <td><img src="https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/media/51/beaters-rule-the-24-hours-of-lemons-inline-3-photo-437992-s-original.jpg?crop=1xw:1xh;center,center&resize=800:*" class="img-thumbnail" alt="Beautiful example of a pampered Volkswagen Golf MK1.  One of a kind family car,  So much space, you even have room for the dog." /></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="record"></td>
+                <td>32,000</td>
+                <td>Volvo</td>
+                <td>262</td>
+                <td><img src="http://www.roadkill.com/wp-content/uploads/2015/12/Bert-One.jpg" class="img-thumbnail" alt="Pefect coupe for the connoisseur of perfection.  Arrive at the office and make a statement." /></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="record"></td>
+                <td>6,000</td>
+                <td>Volkswagen</td>
+                <td>Beetle</td>
+                <td><img src="http://www.roadkill.com/wp-content/uploads/2015/12/Scrubby.jpg" class="img-thumbnail" alt="The first car for child is right look no further.  Safety is top marks on this gem." /></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="record"></td>
+                <td>62,000</td>
+                <td>Lotus</td>
+                <td>Elite</td>
+                <td><img src="http://www.roadkill.com/wp-content/uploads/2015/12/Chotus.jpg" class="img-thumbnail" alt="Own the road in this amazing supercar.  Keep the rest of the pack in your mirror." /></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="delete-row">Delete Row</button>
+    </div>
+
+</div>
+
+<footer class="container-fluid text-center">
+  <p id="footer">Wild Child Sales</p>
+  <p id="footer">1122 Raceland Way</p>
+  <p id="footer">555-243-5968</p>
+</footer>
+
+</body>
+</html>

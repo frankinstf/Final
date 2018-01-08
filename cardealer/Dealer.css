@@ -1,0 +1,144 @@
+form{
+    margin: 20px 0;
+}
+form input, button{
+    padding: 5px;
+}
+table{
+    width: 100%;
+    margin-bottom: 20px;
+border-collapse: collapse;
+}
+table, th, td{
+    border: 2px solid #cdcdcd;
+}
+table th, table td{
+    padding: 10px;
+    text-align: left;
+}
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+
+.row.content {height: 450px}
+
+
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+ #footer1 {
+  background-color: #ccccff;
+  color: black;
+  font-size: 20px;
+  width: 300px;
+  position: relative;
+}
+#footer {
+  color: black;
+  font-size: 20px;
+}
+  #footer2 {
+    position: fixed;
+    bottom: 30px;
+    left: 300px;
+  }
+  #footer3 {
+    color: black;
+    font-style: bold;
+    font-family: courier;
+    background-color: #660066;
+    
+    bottom: 30px;
+    left: 10%;
+  }
+  #div1{
+    background-color: #660066;
+  }
+
+/* .navbar {
+  background-color: blue;
+} */
+
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }}
+  .row.content {
+    height:auto;
+  }
+  .img-thumbnail {
+    max-height: 350px;
+}
+#myInput {
+  background: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 300px;
+  font-size: 16px;
+  padding: 12px 20px 12px 10px;
+  border: 1px ridge #ddd;
+  margin-bottom: 12px;
+  margin-left: 50px;
+  border-radius: 5px;
+}
+#aboutBody{
+     background-image: url("https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-sv/slider/aventador-sv.jpg");
+}
+#homeBody{
+  background: red; /* For browsers that do not support gradients */
+  background: linear-gradient(blue, white, blue, white, blue);
+
+}
+#contBody{
+    background-image: url("https://thumbs.dreamstime.com/b/country-road-sunset-sundown-cloudy-backlite-shot-peferct-car-copy-space-34680021.jpg");
+  }
+
+#invBody{
+    background-image: url("http://altura.aurorak12.org/wp-content/uploads/sites/14/2016/08/HD-Blue-Sky-Wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.col-sm-2 {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+a {
+  color: purple;
+}
+
+#link {
+  color: black;
+  font-family: time;
+  font-size: 20px;
+}
+#wild{
+  font-style: oblique;
+  font-weight: bold;
+  font-family: helvetica;
+  color: black;
+
+}
+#nav1{
+  background-color: pink;
+}
+#nav2{
+  background-color: white;
+}
+#calc {
+  /* font-weight: bold; */
+  font-family: comic sans-serif;
+}
+#side1 {
+  background-color: #ffffcc;
+  border: solid;
+  border-color: gray;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}

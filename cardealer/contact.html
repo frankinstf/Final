@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inventory</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="Dealer.css">
+  <script src="Dealer.js"></script>
+  <script>
+  $(document).ready(function(){
+        $(".add-row").click(function(){
+            var Price = $("#Price").val();
+            var Make = $("#Make").val();
+            var Model = $("#Model").val();
+            var Photo = $("#Photo").attr('src');
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + Price + "</td><td>" + Make + "</td><td>" + Model + "</td><td>" + Photo + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });
+    </script>
+
+</head>
+<body id="contBody">
+  <h1 id="wild">Wild Child Cars</h1>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home.html"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a class="navlink" href="Home.html">Home</a></li>
+        <li><a class="navlink" href="Inventory.html">Inventory</a></li>
+        <li><a class="navlink" href="contact.html">Contact</a></li>
+        <li><a class="navlink" href="about.html">About Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="side1" class="container-fluid text-center">
+  <div class="row content">
+    <div  class="col-sm-2 col-md-4 sidenav">
+      <p>123 Market<br>Chicago, IL<br>66376</p>
+      <p>5409 Canal<br>Chicago, IL<br>69456</p>
+      <p>1238 Broadview<br>Chicago, IL<br>60423</p>
+      <p>892 Calumet<br>Chicago, IL<br>60978</p>
+    </div>
+    <div class="col-sm-10 col-md-8 text-left">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+</div>
+      <footer id="footer3" class="container-fluid text-center">
+        <p>Wild Child Sales</p>
+        <p>1122 Raceland Way</p>
+        <p>555-243-5968</p>
+      </footer>
+    </body>
+  </html>
